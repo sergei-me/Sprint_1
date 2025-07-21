@@ -13,10 +13,11 @@ tickets = {
     4: ['E2E_9', 'API_76'],
     5: ['E2E_2', 'API_61']
 }
-uniq_tickets = {}
-uniq_list = []
+
 
 def del_dubl(dict):
+    uniq_tickets = {}
+    uniq_list = []
     for k, v in tickets.items():
         new_v = []
         for i in v:
@@ -26,7 +27,10 @@ def del_dubl(dict):
                 new_v.append(i)
                 uniq_list.append(i)
         uniq_tickets[k] = new_v
+    return uniq_tickets
 
-del_dubl(tickets)
+def new_dict(dict1, dict2):
+    types_tickets = { v: del_dubl(tickets)[k] for k, v in types.items() }
+    return types_tickets
 
-print(uniq_tickets)
+print(new_dict(types, tickets))
