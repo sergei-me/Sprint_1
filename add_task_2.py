@@ -4,6 +4,8 @@ def digit_root(num):
     for l in s_num:
         sum += int(l)
     if sum >= 10:
-        return digit_root(sum)
+        digit_root(sum)
     else:
         return sum
+    
+print(digit_root(3453))

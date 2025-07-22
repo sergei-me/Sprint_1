@@ -30,7 +30,7 @@ def del_dubl(dict):
     return uniq_tickets
 
 def new_dict(dict1, dict2):
-    types_tickets = { v: del_dubl(tickets)[k] for k, v in types.items() }
-    return types_tickets
+    tickets_by_type = { v: del_dubl(tickets)[k] for k, v in types.items() }
+    return tickets_by_type
 
 print(new_dict(types, tickets))
